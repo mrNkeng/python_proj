@@ -28,3 +28,37 @@ The system exposes a Flask-based API that accepts financial data via HTTP POST r
 - Python 3.8 or higher
 - Flask
 - Docker (optional for containerization)
+
+### Setup
+
+### Clone the repository to your local machine:
+
+git clone https://github.com/yourusername/financial-data-forecasting.git
+#cd financial-data-forecasting
+
+### Create and activate a virtual environment (optional but recommended):
+  - python -m venv venv
+  - source venv/bin/activate  # On Unix/macOS
+  - venv\Scripts\activate  # On Windows
+
+### Install the required packages:
+  - pip install -r requirements.txt
+
+### Start the Flask application:
+  - python app/main.py
+
+### Docker Deployment
+  Build the Docker image:
+  - docker build -t financial-forecasting-app .
+
+  Run the docker container
+  - docker run -p 5001:5000 financial-forecasting-app
+
+### Verifying Docker Deployment
+After the container starts, use the same curl command to verify that the application is accessible and functioning correctly:
+  - curl -X POST http://localhost:5001/forecast -H "Content-Type: application/json" -d '{"prices": [200, 100, 150, 300, 250]}'
+
+
+
+
+
